@@ -11,8 +11,8 @@ INSTRUCCIONES:
  */
 const { cleanConsole } = require('../helpers/system.helpers');
 const { createAll } = require('../helpers/data.helper');
-
+const { averages } = require('../helpers/fixer.helper');
 const companies = createAll();
 
 cleanConsole(5, companies);
-console.log('%c ---- RES 5 --- ', 'background: #bada55; color: #222', 'Put here your method: ');
+console.log('%c ---- RES 5 --- ', 'background: #bada55; color: #222', 'Put here your method: ', averages(companies));

@@ -96,7 +96,27 @@ const fixer = {
             
         })
         return users;
+    },
+    averages(data){
+        let users = fixer.usersTable(data);
+        let usersCar = users.filter(user => user.car == true);
+        let totalAge = users.reduce((sum, value) => ( sum + value.age ), 0)
+        let totalAgeCar = usersCar.reduce((sum, value) => ( sum + value.age ), 0)
+        let average = totalAge / users.length;
+        let averageCar = totalAgeCar / usersCar.length;
+
+        let result = {
+            size: users.length,
+            average: parseFloat(average).toFixed(2),
+            hasCar: users.filter(user => user.car == true).length,
+            averageWithCar: averageCar
+
+        }
+
+        return result;
     }
+
+
 };
 
 
