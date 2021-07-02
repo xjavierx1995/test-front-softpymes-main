@@ -16,7 +16,10 @@ Crear una función tomando la variable "companies" como parámetro y reemplazar:
 
 const { cleanConsole } = require('../helpers/system.helpers');
 const { createAll } = require('../helpers/data.helper');
+const { fixData } = require('../helpers/fixer.helper');
+
 const companies = createAll();
 
 cleanConsole(1, companies);
-console.log('%c ---- RES 1 --- ', 'background: #bada55; color: #222', 'Put here your method: ');
+
+console.log('%c ---- RES 1 --- ', 'background: #bada55; color: #222', 'Put here your method: ', fixData(companies));
