@@ -19,16 +19,16 @@ INSTRUCCIONES:
 
 const { cleanConsole } = require('../helpers/system.helpers');
 const { createAll } = require('../helpers/data.helper');
-
+const { getCompanyById, deleteCompanyById, addUserByCompanyId, deleteUserById, changeUserCompany } = require('../helpers/fixer.helper');
 const companies = createAll();
 
 cleanConsole(7, companies);
 
-console.log('%c ---- RES 7 --- part 1', 'background: #bada55; color: #222', 'Put here your method: ');
-console.log('%c ---- RES 7 --- part 2', 'background: #bada55; color: #222', 'Put here your method: ');
-console.log('%c ---- RES 7 --- part 3', 'background: #bada55; color: #222', 'Put here your method: ');
-console.log('%c ---- RES 7 --- part 4', 'background: #bada55; color: #222', 'Put here your method: ');
-console.log('%c ---- RES 7 --- part 5', 'background: #bada55; color: #222', 'Put here your method: ');
-console.log('%c ---- RES 7 --- part 6', 'background: #bada55; color: #222', 'Put here your method: ');
+console.log('%c ---- RES 7 --- part 1', 'background: #bada55; color: #222', 'Put here your method: ', getCompanyById(companies, 3));
+console.log('%c ---- RES 7 --- part 2', 'background: #bada55; color: #222', 'Put here your method: ', deleteCompanyById(companies, 3));
+console.log('%c ---- RES 7 --- part 3', 'background: #bada55; color: #222', 'Put here your method: ', );
+console.log('%c ---- RES 7 --- part 4', 'background: #bada55; color: #222', 'Put here your method: ', addUserByCompanyId(companies, 3));
+console.log('%c ---- RES 7 --- part 5', 'background: #bada55; color: #222', 'Put here your method: ', deleteUserById(companies, 3, 14));
+console.log('%c ---- RES 7 --- part 6', 'background: #bada55; color: #222', 'Put here your method: ', changeUserCompany(companies, 3, 6));
 
 

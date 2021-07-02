@@ -131,8 +131,48 @@ const fixer = {
         });
 
         return newData;
-    }
+    },
+    getCompanyById(data, id){
+        result = data.filter(e => e.id == id)
+        return result[0].name;
+    },
+    deleteCompanyById(data, id){
+        result = data.filter(e => e.id != id)
+        return result;
+    },
+    addUserByCompanyId(data, id){
+        result = data.filter(e => e.id == id)
+        result[0].users.push({
+            age: 35,
+            car: true,
+            firstName: "Juan",
+            id: Math.floor(Math.random() * (100 - 1)) + 1,
+            lastName: "Delgado",
+        })
+        result[0].usersLength = result[0].users.length;
+        return result[0];
+    },
+    deleteUserById(data, company_id, user_id){
+        comp = data.filter(e => e.id == company_id)
 
+        comp[0].users = comp[0].users.filter(e => e.id != user_id)
+
+        comp[0].usersLength = comp[0].users.length
+
+        return comp[0];
+    },
+    changeUserCompany(data, company_id, user_id){
+        indexCompany = data.findIndex(e => e.id == company_id)
+        userChange = data[indexCompany].users.filter(e => e.id == user_id);
+        data[indexCompany].users = data[indexCompany].users.filter(e => e.id != user_id)
+        data[indexCompany].usersLength = data[indexCompany].users.length
+
+        data[data.length - 1].users.push(...userChange);
+        data[data.length - 1].usersLength = data[data.length - 1].users.length;
+        
+        return data;
+
+    }
 };
 
 
