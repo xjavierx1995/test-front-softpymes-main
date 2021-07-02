@@ -114,8 +114,24 @@ const fixer = {
         }
 
         return result;
-    }
+    },
+    concatFullName(data){
+        let newData = [];
+        data.forEach((element, i) => {
 
+            element.users.forEach(user => {
+                for (const obj in user) {
+                    if (user[obj] === undefined) {
+                        user[obj] = "";
+                    }
+                }
+                user.firstName+user.lastName+user.age;
+                newData[user.firstName+user.lastName+user.age] = user.car
+            });
+        });
+
+        return newData;
+    }
 
 };
 

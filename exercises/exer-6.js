@@ -15,9 +15,10 @@ const exampleObj = {
 
 const { cleanConsole } = require('../helpers/system.helpers');
 const { createAll } = require('../helpers/data.helper');
+const { concatFullName } = require('../helpers/fixer.helper');
 
 const companies = createAll();
 
 console.log(`%c ---- EXAMPLE TEST 6 --- Example object: `, 'background: #222; color: #bada55', exampleObj);
 cleanConsole(6, companies);
-console.log('%c ---- RES 6 --- ', 'background: #bada55; color: #222', 'Put here your method: ');
+console.log('%c ---- RES 6 --- ', 'background: #bada55; color: #222', 'Put here your method: ', concatFullName(companies));
