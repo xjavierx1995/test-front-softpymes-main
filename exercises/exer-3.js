@@ -14,5 +14,5 @@ const { fixData, isDataFixed } = require('../helpers/fixer.helper');
 const companies = createAll();
 
 cleanConsole(3, companies);
-// fixData(companies);
+fixData(companies);
 console.log('%c ---- RES 3 --- ', 'background: #bada55; color: #222', 'Put here your method: ', isDataFixed(companies));

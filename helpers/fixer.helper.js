@@ -69,6 +69,33 @@ const fixer = {
     },
     isFirstUpper(str){
         return str.charAt(0).toUpperCase() === str.charAt(0)
+    },
+    usersTable(data){
+        let users = [];
+        data.forEach((element, i) => {
+
+            element.users.forEach(user => {
+                user.company = element.name;
+            });
+            users = [...users, ...element.users]
+        });
+        users = fixer.orderByAge(users)
+
+        return users;
+    },
+    orderByAge(users){
+        users.sort(function(a, b) {
+            if (a.age < b.age) {
+                return 1;
+            }
+            if (a.age > b.age) {
+                return -1;
+            }
+
+            return 0
+            
+        })
+        return users;
     }
 };
 

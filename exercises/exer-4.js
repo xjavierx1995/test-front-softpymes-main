@@ -11,8 +11,8 @@ Crear una función tomando como parámetro la variable "companies":
 */
 const { cleanConsole } = require('../helpers/system.helpers');
 const { createAll } = require('../helpers/data.helper');
-
+const { usersTable } = require('../helpers/fixer.helper');
 const companies = createAll();
 
 cleanConsole(4, companies);
-console.log('%c ---- RES 4 --- ', 'background: #bada55; color: #222', 'Put here your method: ');
+console.log('%c ---- RES 4 --- ', 'background: #bada55; color: #222', 'Put here your method: ', usersTable(companies));
