@@ -10,8 +10,9 @@ un booleano que:
 
 const { cleanConsole } = require('../helpers/system.helpers');
 const { createAll } = require('../helpers/data.helper');
-
+const { fixData, isDataFixed } = require('../helpers/fixer.helper');
 const companies = createAll();
 
 cleanConsole(3, companies);
-console.log('%c ---- RES 3 --- ', 'background: #bada55; color: #222', 'Put here your method: ');
+// fixData(companies);
+console.log('%c ---- RES 3 --- ', 'background: #bada55; color: #222', 'Put here your method: ', isDataFixed(companies));

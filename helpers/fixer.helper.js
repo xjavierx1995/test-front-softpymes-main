@@ -47,7 +47,6 @@ const fixer = {
         });
         return users;
     },
-
     userHasCar(data, hasCar){
         data.forEach(element => {
             element.users = element.users.filter(user => user.car == hasCar)
@@ -55,6 +54,21 @@ const fixer = {
         });
 
         return data;
+    },
+    isDataFixed(data){
+        data.forEach(element => {
+            
+            element.users.forEach(user => {
+                if(!fixer.firstToUpper(user.firstName) || !fixer.firstToUpper(user.lastName)){
+                    return false
+                }
+            });
+        })
+
+        return true;
+    },
+    isFirstUpper(str){
+        return str.charAt(0).toUpperCase() === str.charAt(0)
     }
 };
 
