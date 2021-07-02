@@ -46,6 +46,15 @@ const fixer = {
             return 0;
         });
         return users;
+    },
+
+    userHasCar(data, hasCar){
+        data.forEach(element => {
+            element.users = element.users.filter(user => user.car == hasCar)
+            element.usersLength = element.users.length
+        });
+
+        return data;
     }
 };
 
